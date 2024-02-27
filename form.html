@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Tutorial</title>
+</head>
+<body>
+    <h4>İletişim Formu</h4>
+    <form>
+        <fieldset>
+            <legend>Kişisel Bilgiler</legend>
+            <label for="ad">Ad:</label>
+            <input type="text" id="ad" name="ad" required><br><br>
+
+            <label for="soyad">Soyad:</label>
+            <input type="text" id="soyad" name="soyad"><br><br>
+
+            <label for="email">E-posta:</label>
+            <input type="email" id="email" name="email">
+        </fieldset>
+        <fieldset>
+            <legend>Mesajınız</legend>
+            <label for="mesaj">Mesajınız:</label>
+            <textarea name="mesaj" id="mesaj" cols="30" rows="4"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Ulaşım Tercihiniz</legend>
+            <label for="ulasim">Ulaşım Aracı:</label>
+            <select name="ulasim" id="ulasim">
+                <option value="otomobil">Otomobil</option>
+                <option value="Bisiklet">Bisiklet</option>
+                <option value="Yürüyüş">Yürüyüş</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Hobileriniz</legend>
+            <label>
+                <input type="checkbox"> Kitap okuma
+                <input type="checkbox"> Müzik Dinleme
+                <input type="checkbox"> Spor Yapma
+            </label>
+        </fieldset><br>
+        <button type="submit">Gönder</button>
+    </form>
+</body>
+</html>
