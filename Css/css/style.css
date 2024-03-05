@@ -1,11 +1,149 @@
-#logo{
-    color: yellow;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-h1{
-    color: red;
+header{
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+}
+nav{
+    display: flex;
+    align-items: center;
+}
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+}
+nav ul li{
+    margin-right: 20px;
+}
+nav a{
+    text-decoration: none;
+    color: #fff;
+}
+.hero{
+    background-color: #2ecc71;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+.hero h1{
+    font-size: 36px;
+}
+.hero p{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #e74c3c;
+    color: #fff;
+}
+.features{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+}
+.feature{
+    text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
+}
+.feature h2{
+    font-size: 24px;
+}
+.contact{
+    background-color: #f39c12;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+}
+.contact h2{
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+form{
+    max-width: 400px;
+    margin: 0 auto;
+}
+form label{
+    display: block;
+    margin-bottom: 10px;
+}
+form input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+footer{
+    background-color: #34495e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.menu-toogle{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+@media only screen and (max-width: 768px){
+    .features{
+        flex-direction: column;
+        align-items: center;
+    }
+    .feature{
+        width: 80%;
+    }
+    form{
+        max-width: 100%;
+    }
+}
 
-    color: blueviolet;
+@media only screen and (max-width: 600px){
+    .hero h1{
+        font-size: 24px;
+    }
+    .hero p{
+        font-size: 16px;
+    }
+    .btn{
+        font-size: 14px;
+    }
+    .feature{
+        width: 100%;
+    }
 }
-h1{
-    color: green;
+@media only screen and (max-width: 480px){
+    .nav-list{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #3498db;
+    }
+    .nav-list.show{
+        display: flex;
+    }
+    .nav-list li{
+        margin: 10px 0;
+    }
+    .menu-toogle{
+        display: block;
+    }
 }
+
+

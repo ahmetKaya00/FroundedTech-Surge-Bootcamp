@@ -1,0 +1,135 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+.navbar ul li{
+    margin: 0 15px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+.navbar ul li a:hover{
+    background-color: blueviolet;
+}
+
+section{
+    text-align: center;
+    margin: 30px;
+    padding: 15px;
+}
+.profile-picture{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.profile-picture img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+.profile-picture img:hover{
+    transform: scale(1.1);
+}
+.info-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.info{
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.info:hover{
+    transform: translateY(-10px);
+}
+
+#project{
+    text-align: center;
+}
+#project h2, #project p{
+    margin-bottom: 15px;
+}
+.project-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.project-card{
+    width: 40%;
+    margin: 0;
+    text-align: center;
+    position: relative;
+}
+.project-card img{
+    width: 100%;
+    border-radius: 8px;
+}
+.project-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+.project-overlay p{
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+.project-card:hover .project-overlay{
+    opacity: 1;
+}
+
+footer{
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 480px){
+    .info{
+        width: 100%;
+    }
+    .project-card{
+        width: 100%;
+    }
+    .alinti{
+        display: none;
+    }
+    footer{
+        background-color: aqua;
+    }
+}
+
