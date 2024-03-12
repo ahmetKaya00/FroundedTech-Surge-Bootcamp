@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            text-align: center;
+            margin: 50px;
+        }
+        input{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <label for="inputText">Metin Kutusu:</label>
+        <input type="text" id="inputText" placeholder="Birşeyler yaz...">
+        <button onclick="updateText()">Metni Güncelle</button>
+    </div>
+
+    <script>
+        function updateText(){
+            const inputText = document.getElementById('inputText');
+
+            const inputValue = inputText.value;
+
+            if(inputValue.length > 0){
+                inputText.style.border = '2px solid green'        
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = `Girilen metin: ${inputValue}`;
+
+            document.body.appendChild(newParagraph);
+
+            inputText.value = '';
+            }else{
+                inputText.style.border = '2px solid red';
+                alert('Lütfen bir şey yazın');
+            }
+        }
+    </script>
+</body>
+</html>

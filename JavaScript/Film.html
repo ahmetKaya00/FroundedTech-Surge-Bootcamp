@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FİLM LİST</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-4">Film Arşivi</h2>
+
+        <form id="filmForm">
+            <div class="form-group">
+                <label for="filmAdi" class="form-label">Film Adı:</label>
+                <input type="text" class="form-control" id="filmAdi" required>
+            </div>
+            <div class="form-group">
+                <label for="filmResmi" class="form-label">Film URL:</label>
+                <input type="text" class="form-control" id="filmResmi" required>
+            </div>
+            <button class="btn btn-primary" type="submit" onclick="ekleFilm()">Film Ekle</button>
+        </form>
+
+        <hr>
+
+        <h3>İzlenecek Film Listesi</h3>
+        <ul id="filmListesi" class="list-group">
+
+        </ul>
+        <h3>İzlenen Film Listesi</h3>
+        <ul id="izlenenfilmListesi" class="list-group">
+
+        </ul>
+    </div>
+
+    <script>
+        function ekleFilm(){
+            var filmAdi = document.getElementById("filmAdi").value;
+            var filmResmi = document.getElementById("filmResmi").value;
+
+            if(filmAdi && filmResmi){
+                var filmListesi = document.getElementById('filmListesi');
+
+                var li = document.createElement("li");
+                li.className = "list-group-item";
+                li.innerHTML = `
+                <div class="d-flex justify-content-between align-items-center">
+                    <img src="${filmResmi}" class="img-thumbnail" style ="max-width: 100px;">
+                    <span>${filmAdi}</span>
+                    <button type="button" class = "btn btn-danger btn-sm" onclick="silFilm(this)">SİL</button>
+                    <button type="button" class = "btn btn-success btn-sm" onclick="izleFilm(this)">SİL</button>
+
+                `;
+
+                filmListesi.appendChild(li);
+
+                document.getElementById("filmForm").reset();
+            }else{
+                alert("Film adı ve resmi boş bırakılamaz!");
+            }
+        }
+
+        function silFilm(btn){
+            var listItem = btn.closest("li");
+            listItem.remove();
+        }
+    </script>
+</body>
+</html>

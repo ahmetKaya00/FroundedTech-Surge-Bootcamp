@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FİLM LİST</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-4">Film Arşivi</h2>
+
+        <form id="filmForm">
+            <div class="form-group">
+                <label for="filmAdi" class="form-label">Film Adı:</label>
+                <input type="text" class="form-control" id="filmAdi" required>
+            </div>
+            <button class="btn btn-primary" type="submit" id="addFilmBtn">Film Ekle</button>
+        </form>
+
+        <hr>
+
+        <h3>İzlenecek Film Listesi</h3>
+        <ul id="filmListesi" class="list-group">
+
+        </ul>
+        <h3>İzlenen Film Listesi</h3>
+        <ul id="izlenenfilmListesi" class="list-group">
+
+        </ul>
+    </div>
+
+    <script>
+       let izlenenFilmler = [];
+       let izlenecekFilmler = [];
+
+       const filmAdi = document.getElementById('filmAdi');
+       const addFilmBtn = document.getElementById('addFilmBtn');
+       const filmListesi = document.getElementById('filmListesi');
+       const izlenenfilmListesi = document.getElementById('izlenenfilmListesi');
+
+       addFilmBtn.addEventListener('click', function(){
+        const filmAdi = filmAdi.value.trim();
+
+        if(filmAdi !== ''){
+            addFilmTOWatch(film);
+            filmAdi.value = '';
+        }
+       });
+
+       function addFilmTOWatch(filmAdi){
+        const yeniFilm = {
+            id: DateTime.Now(),
+            adi: filmAdi,
+        };
+
+        izlenecekFilmler.push(yeniFilm);
+        displayWatchList();
+       }
+       function displayWatchList(){
+        filmListesi.innerHTML = '';
+
+        izlenecekFilmler.forEach(film =>{
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                ${filmAdi}
+                <button class = "btn btn-success btn-sm" onclick="moveToWathed(${film.id})">İzlendi</button>
+            `;
+            filmListesi.appendChild(listItem);
+        });
+       }
+
+       function moveToWathed(filmId){
+        izlenecekFilmler = izlenecekFilmler.filter(f => f.id !== filmId);
+
+        const izlenenFilm = izlenecekFilmler.find(f=>f.id === filmId);
+        izlenenfilmListesi.push(izlenenFilm);
+
+        displayWatchList();
+        displayWatchedList();
+       }
+
+       function displayWatchedList(){
+        izlenenfilmListesi.innerHTML = '';
+
+        izlenenFilmler.forEach(izlenenFilmler =>{
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+            ${izlenenFilmler.adi}
+            `;
+            izlenenfilmListesi.appendChild(listItem);
+        });
+       }
+
+
+    </script>
+</body>
+</html>

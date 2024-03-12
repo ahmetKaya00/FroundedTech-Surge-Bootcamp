@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basic</title>
+    <style>
+        #container{
+            text-align: center;
+            margin: 50px;
+        }
+        h1{
+            color: blue;
+        }
+        p{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Hello, DOM!</h1>
+        <p id="message">Bu bir örnek paragraftır!</p>
+        <button onclick="changeStyle()">Stil Değiştir</button>
+        <button onclick="addElement()">Element Ekleme</button>
+        <button onclick="removeElement()">Element Silme</button>
+        <button onclick="updateElement()">Element Güncelleme</button>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const message = document.getElementById('message');
+
+        function changeStyle(){
+            message.style.color = 'red';
+        }
+
+        const paragraphs = document.getElementsByTagName('p');
+        for(const p of paragraphs){
+            console.log(p.textContent);
+        }
+
+        function addElement(){
+            const newElement = document.createElement('p');
+            newElement.textContent = 'Yeni paragraf!';
+            container.appendChild(newElement);
+        }
+
+        function removeElement(){
+            const lastElement = container.firstElementChild;
+            if(lastElement){
+                container.removeChild(lastElement);
+            }
+        }
+        function updateElement(){
+            message.textContent = 'Yeni mesaj'
+        }
+
+    </script>
+</body>
+</html>

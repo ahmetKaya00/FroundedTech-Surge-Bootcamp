@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>Alişveriş Sepeti</header>
+    <div id="productList"></div>
+    <div id="shoppingCart"></div>
+
+    <script>
+    const product = [
+        {id:1, name:'Ürün 1', price: 10},
+        {id:2, name:'Ürün 2', price: 20},
+        {id:3, name:'Ürün 3', price: 30},
+    ];
+
+    let shoppingCart = [];
+
+    const productListElement = document.getElementById('productList');
+    const shoppingCartElement = document.getElementById('shoppingCart');
+
+    function displayProduct(){
+        productListElement.innerHTML = '';
+
+        product.forEach(product =>{
+            const productElement = document.createElement('div');
+            productElement.innerHTML = 
+            `<p>${product.name} - ${product.price} TL</p>
+            <button onclick="AddToCart(${product.id})">Sepete Ekle</button>
+            `;
+            productListElement.appendChild(productElement);
+        });
+    }
+
+    function displayShoppingCart(){
+        shoppingCartElement.innerHTML = '';
+
+        shoppingCart.forEach(item =>{
+            const cartItemElement = document.createElement('div');
+            cartItemElement.innerHTML = 
+            `<p>${item.name} - ${item.price} TL</p>
+            <button onclick="removeFromCart(${item.id})">Sepete Ekle</button>
+            `;
+            shoppingCartElement.appendChild(cartItemElement);
+        });
+    }
+    function AddToCart(productId){
+        const selectedProduct = product.find(p => p.id === productId);
+        shoppingCart.push(selectedProduct);
+        displayShoppingCart();
+    }
+    function removeFromCart(productId){
+        shoppingCart = shoppingCart.filter(i => i.id !== productId);
+        displayShoppingCart();
+    }
+
+    displayProduct();
+    displayShoppingCart();
+</script>
+</body>
+</html>

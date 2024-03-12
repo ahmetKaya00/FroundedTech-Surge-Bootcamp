@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO LİST</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4 mb-4">TODO List</h1>
+        <form id="noteForm">
+            <div class="form-group">
+                <label for="noteInput" class="fomr-label">Notunuz:</label>
+                <input type="text" class="form-control" id="noteInput" required>
+            </div>
+            <div class="form-group">
+                <label for="dateTimeInput">Tarih ve Saat</label>
+                <input type="datetime-local" class="form-control" id="dateTimeInput" required>
+            </div>
+            <button type="submit" class="btn btn-warning">Not Ekle</button>
+        </form>
+
+        <ul class="list-group mt-4" id="noteList">
+
+        </ul>
+
+        <button class="btn btn-danger mt-4" id="deleteAllBtn">Tüm Görevleri Sil</button>
+    </div>
+
+    <script>
+        const noteForm = document.getElementById('noteForm');
+        const noteList = document.getElementById('noteList');
+        const deleteAllBtn = document.getElementById('deleteAllBtn');
+
+        noteForm.addEventListener('submit', function(event){
+
+            event.preventDefault();
+            const noteInput = document.getElementById('noteInput');
+            const dateTimeInput = document.getElementById('dateTimeInput');
+
+            const noteText = noteInput.value.trim();
+            const dateTimeValue = dateTimeInput.value;
+
+            if(noteText !== '' && dateTimeValue !== ''){
+                addNoteToList(noteText, dateTimeValue);
+                noteInput.value = '';
+                dateTimeInput.value = '';
+            }
+        });
+
+        function addNoteToList(noteText, dateTimeValue){
+            const listItem = document.createElement('li');
+            listItem.className = 'list-group-item';
+            listItem.innerHTML=`
+                ${noteText} - <small>${formatDateTime(dateTimeValue)} </small>
+                <button class="btn btn-danger btn-sm float-right" onclick="removeNote(this)">SİL</button>
+            `;
+            noteList.appendChild(listItem);
+        }
+
+        function removeNote(buttonElement){
+            const listItem = buttonElement.parentElement;
+            noteList.removeChild(listItem);
+        }
+
+        deleteAllBtn.addEventListener('click', function(){
+            const confirmDelete = confirm("Tüm notları silmek istediğinden emin misin ?");
+            if(confirmDelete){
+                while(noteList.firstChild){
+                    noteList.removeChild(noteList.firstChild);
+                }
+                alert('Tüm görevler tamamlandı');
+            }
+        });
+
+        function formatDateTime(dateTimeValue){
+            const dateTime = new Date(dateTimeValue);
+            return dateTime.toLocaleString('en-US');
+        }
+
+    </script>
+</body>
+</html>
