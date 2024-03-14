@@ -1,0 +1,144 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-feature-settings: normal;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+.nav-list li{
+    margin-right: 20px;
+}
+.nav-list li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+.nav-list li a:hover{
+    color: #fa0050;
+}
+
+.search-feature{
+    background: url('/YemekSepeti/wwwroot/img/1.jpg') center/cover no-repeat;
+    padding: 120px;
+}
+.search-container{
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: #fff;
+}
+.search-form{
+    display: flex;
+    align-items: center;
+}
+.search-input{
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-radius: 5px 0 0 5px;
+}
+.search-button{
+    padding: 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    background-color: #fa0050;
+    cursor: pointer;
+}
+
+.promo-feature{
+    background: url('/YemekSepeti/wwwroot/img/1.jpg') center/cover no-repeat;
+    margin-top: 125px;
+    color: #fff;
+    padding: 125px 0;
+}
+
+.promo-container{
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.promo-content{
+    background-color: #fff;
+    display: inline-block;
+    position: relative;
+    right: 160px;
+    top: 180px;
+    padding: 20px;
+    border-radius: 8px;
+    color: #333;
+    text-align: left;
+    width: 60%;
+}
+.promo-button{
+    background-color: #fa0050;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.promo-button:hover{
+    background-color: #d30043;
+}
+
+
+.other-feature{
+    background: #f8f9fa;
+    padding: 100px 20px;
+}
+.other-container{
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.other-cards{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.other-card{
+    width: 23%;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: tranform 0.3s;
+    margin-right: 10px;
+}
+.other-card:hover{
+    transform: scale(1.05);
+}
+.other-card-image{
+    position: relative;
+}
+.other-card-image img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.other-ovelay-text{
+    position: absolute;
+    bottom: 25px;
+    left: 10px;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 2px;
+    color: #333;
+}

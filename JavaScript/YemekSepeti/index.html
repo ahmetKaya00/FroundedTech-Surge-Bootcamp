@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--CSS-->
+    <link rel="stylesheet" href="wwwroot/css/style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyTO5nO9sRVJL7kyOD1POFIBRahYwqI6uT" crossorigin="anonymous">
+    <title>Yemek Sepeti</title>
+</head>
+<body>
+     <header>
+        <div class="header-container">
+            <div class="logo">Şirket Adı</div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#">Giriş Yap</a></li>
+                    <li><a href="#">Kayıt Ol</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+     </header>
+     
+     <!--Search Section-->
+
+     <section class="search-feature">
+        <div class="search-container">
+            <form class="search-form" id="searchForm">
+                <input type="text" placeholder="Adresini belirle ve seç" class="search-input">
+                <button type="submit" class="search-button">Ara</button>
+            </form>
+        </div>
+     </section>
+
+     <section class="promo-feature">
+        <div class="promo-container">
+            <div class="promo-content">
+                <p>Hemen katılın, Yemeksepeti ile satışlarınızı katlamaya başlayın
+
+                    Binlerce yeni kullanıcıya ulaşabilmek ister misiniz? Sadece kendi semtinizdekiler değil, artık çevre semtlerdeki binlerce kullanıcı da işletmenizden sipariş verebilecek. Bir ev, bir plaza, bir işyeri ya da üniversite kampüsü, hizmet vermek istediğiniz kim varsa artık müşteriniz.
+                    
+                    Gayet basit! Menünüzü listeliyoruz ve sipariş bilgilerini size ulaştırıyoruz. Sipariş teslimatını dilerseniz kendiniz yapabiliyorsunuz, dilerseniz Yemeksepeti sizin adınıza kullanıcıya ulaştırıyor.
+                    
+                    Hemen ailemize katılabilir ve muhteşem avantajlara sahip iş ortaklarımızdan biri olabilirsiniz.
+                    
+                    </p>
+                    <button class="promo-button">Başlayalım</button>
+            </div>
+        </div>
+     </section>
+
+     <section class="other-feature">
+        <h2>Türkiye'nin her şehrindeyiz!</h2>
+        <div class="other-container">
+            <div class="other-cards">
+                <div class="other-card" onclick="redirectToPage('ankara-page.html')">
+                    <div class="other-card-image">
+                        <img src="wwwroot/img/1.jpg" alt="">
+                        <div class="other-ovelay-text">Ankara</div>
+                    </div>
+                </div>
+                <div class="other-card" onclick="redirectToPage('ankara-page.html')">
+                    <div class="other-card-image">
+                        <img src="wwwroot/img/1.jpg" alt="">
+                        <div class="other-ovelay-text">Ankara</div>
+                    </div>
+                </div>
+                <div class="other-card" onclick="redirectToPage('ankara-page.html')">
+                    <div class="other-card-image">
+                        <img src="wwwroot/img/1.jpg" alt="">
+                        <div class="other-ovelay-text">Ankara</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+</body>
+</html>
