@@ -6,94 +6,116 @@
     <title>FİLM LİST</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+        <style>
+            body{
+                padding: 20px;
+            }
+            #movieList, #watchedList{
+                margin-top: 20px;
+            }
+            .movie-image{
+                width: 100px;
+                height: 100px;
+            }
+
+        </style>
 </head>
 <body>
-    <div class="container">
-        <h2 class="mt-4">Film Arşivi</h2>
+   <div class="container">
+    <h1 class="mb-4">Film Arşivi</h1>
 
-        <form id="filmForm">
-            <div class="form-group">
-                <label for="filmAdi" class="form-label">Film Adı:</label>
-                <input type="text" class="form-control" id="filmAdi" required>
-            </div>
-            <button class="btn btn-primary" type="submit" id="addFilmBtn">Film Ekle</button>
-        </form>
+    <div class="mb-3">
+        <label for="movieName" class="form-label">Film Adı:</label>
+        <input type="text" class="form-control" id="movieName">
+    </div>
+    <div class="mb-3">
+        <label for="imageUrl" class="form-label">Resim URL:</label>
+        <input type="text" class="form-control" id="imageUrl">
+    </div>
+    <button class="btn btn-primary" onclick="addMovie()">Filmi Ekle</button>
 
-        <hr>
-
-        <h3>İzlenecek Film Listesi</h3>
-        <ul id="filmListesi" class="list-group">
-
-        </ul>
-        <h3>İzlenen Film Listesi</h3>
-        <ul id="izlenenfilmListesi" class="list-group">
-
-        </ul>
+    <!--İzlenecek Film Listesi-->
+    <h2 class="mt-4">İzlenecek Filmler</h2>
+    <div id="movieList">
+        
     </div>
 
-    <script>
-       let izlenenFilmler = [];
-       let izlenecekFilmler = [];
+    <!--İzlenen Film Listesi-->
+    <h2 class="mt-4">İzlenen Filmler</h2>
+    <div id="watchedList">
 
-       const filmAdi = document.getElementById('filmAdi');
-       const addFilmBtn = document.getElementById('addFilmBtn');
-       const filmListesi = document.getElementById('filmListesi');
-       const izlenenfilmListesi = document.getElementById('izlenenfilmListesi');
+    </div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+    function addMovie(){
+        var movieName = document.getElementById('movieName').value;
+        var imageUrl = document.getElementById('imageUrl').value;
 
-       addFilmBtn.addEventListener('click', function(){
-        const filmAdi = filmAdi.value.trim();
-
-        if(filmAdi !== ''){
-            addFilmTOWatch(film);
-            filmAdi.value = '';
+        if(movieName.trim() === '' || imageUrl.trim()===''){
+            alert('Lütfen film adı ve resim URL\si girin.');
+            return;
         }
-       });
 
-       function addFilmTOWatch(filmAdi){
-        const yeniFilm = {
-            id: DateTime.Now(),
-            adi: filmAdi,
-        };
+        var movieList = document.getElementById('movieList');
+        var listItem = document.createElement('div');
+        listItem.className = 'd-flex justify-content-between align-items-center border-bottom mb-2';
 
-        izlenecekFilmler.push(yeniFilm);
-        displayWatchList();
-       }
-       function displayWatchList(){
-        filmListesi.innerHTML = '';
+        var movieContent = document.createElement('div');
+        movieContent.className = 'd-flex align-items-center';
 
-        izlenecekFilmler.forEach(film =>{
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-                ${filmAdi}
-                <button class = "btn btn-success btn-sm" onclick="moveToWathed(${film.id})">İzlendi</button>
-            `;
-            filmListesi.appendChild(listItem);
-        });
-       }
+        var movieImage = document.createElement('img');
+        movieImage.src = imageUrl;
+        movieImage.alt = movieName;
+        movieImage.className = 'movie-image me-2';
 
-       function moveToWathed(filmId){
-        izlenecekFilmler = izlenecekFilmler.filter(f => f.id !== filmId);
+        var movieTitle = document.createElement('span');
+        movieTitle.textContent = movieName;
 
-        const izlenenFilm = izlenecekFilmler.find(f=>f.id === filmId);
-        izlenenfilmListesi.push(izlenenFilm);
+        movieContent.appendChild(movieImage);
+        movieContent.appendChild(movieTitle);
 
-        displayWatchList();
-        displayWatchedList();
-       }
-
-       function displayWatchedList(){
-        izlenenfilmListesi.innerHTML = '';
-
-        izlenenFilmler.forEach(izlenenFilmler =>{
-            const listItem = document.createElement('li');
-            listItem.innerHTML = `
-            ${izlenenFilmler.adi}
-            `;
-            izlenenfilmListesi.appendChild(listItem);
-        });
-       }
+        var buttons = document.createElement('div');
+        buttons.innerHTML = `
+        <button class="btn btn-success me-2" onclick="watchMovie(this)">İzlendi</button>
+        <button class="btn btn-danger me-2" onclick="removeMovie(this)">Kaldır</button>
+        `;
 
 
-    </script>
+        listItem.appendChild(movieContent);
+        listItem.appendChild(buttons);
+
+        movieList.appendChild(listItem);
+
+        document.getElementById('movieName').value = '';
+        document.getElementById('imageUrl').value = '';
+    }
+
+    function watchMovie(button){
+        var listItem = button.parentNode.parentNode;
+        var watchedList = document.getElementById('watchedList');
+        var emotion = prompt('Filmle ilgili duygu notlarınızı yazınız:');
+
+        var movieContent = listItem.querySelector('.d-flex .align-items-center');
+        console.log(movieContent);
+        var movieImage = movieContent.querySelector('.movie-image');
+
+        var smallImage = movieImage.cloneNode();
+        smallImage.className = 'movie-image me-2';
+
+        listItem.innerHTML = '';
+        listItem.appendChild(smallImage);
+        listItem.innerHTML += `<span>${emotion}</span>`;
+        watchedList.appendChild(listItem);
+
+        button.parentNode.innerHTML = '<span class="text-success">İzlendi</span>';
+    }
+
+    function removeMovie(button){
+        var listItem = button.parentNode.parentNode;
+        listItem.remove();
+    }
+
+   </script>
 </body>
 </html>
