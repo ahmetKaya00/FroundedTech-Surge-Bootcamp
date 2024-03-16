@@ -2,7 +2,7 @@ import React from "react";
 import Navi from "./Navi";
 import CategoryList from "./CategoryList";
 import ProductList from "./ProductList";
-import { Container, Row } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 function App() {
   return (
     <div>
@@ -11,12 +11,12 @@ function App() {
         <Navi/>
         </Row>
         <Row>
-          <col xs="3">
+          <Col xs="3">
           <CategoryList/>
-          </col>
-          <col xs="9">
+          </Col>
+          <Col xs="9">
           <ProductList/>
-          </col>
+          </Col>
         </Row>
       </Container>
     </div>
