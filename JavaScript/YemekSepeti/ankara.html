@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyTO5nO9sRVJL7kyOD1POFIBRahYwqI6uT" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        margin: 0 150px;
+    }
+    .logo{
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .nav-list{
+        list-style: none;
+        display: flex;
+    }
+    .nav-list li{
+        margin-right: 20px;
+    }
+    .nav-list li a{
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .nav-list li a:hover{
+        color: #fa0050;
+    }
+
+    .search-feature{
+        background: url('/YemekSepeti/wwwroot/img/1.jpg') center/cover no-repeat;
+        padding: 120px;
+    }
+    .search-container{
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        color: #fff;
+    }
+    .breadcrumb{
+        margin: 10px 150px;
+    }
+    .breancrumb-item{
+        display: inline-block;
+        margin-right: 10px;
+        font-size: 14px;
+    }
+    .breancrumb-item:last-child{
+        font-weight: bold;
+    }
+    .cards-container{
+        margin: 0 150px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .card{
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        width: calc(25% - 20px);
+        margin-bottom: 20px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    .discount{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background-color: #fa0050;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+        z-index: 1;
+    }
+    .card img{
+        width: 100%;
+        height: auto;
+        border-radius: 8px 8px 0 0;
+        transition: transform 0.3s ease;
+    }
+    .card:hover img{
+        transform: scale(1.05);
+    }
+    .info{
+        margin-left: 25px;
+    }
+    .info p{
+        margin: 5px 0;
+        font-size: 12px;
+        color: #888;
+    }
+    .rating{
+        position: absolute;
+        bottom: 70px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+    }
+    .rating i{
+        margin-right: 5px;
+    }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">Şirket Adı</div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#">Giriş Yap</a></li>
+                    <li><a href="#">Kayıt Ol</a></li>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+     </header>
+     
+     <!--Search Section-->
+
+     <section class="search-feature">
+        <div class="search-container">
+
+        </div>
+     </section>
+
+     <div class="breadcrumb">
+        <div class="breancrumb-item"><a href="index.html">Anasayfa</a></div>
+        <div class="breancrumb-item">></div>
+        <div class="breancrumb-item">Ankara</div>
+     </div>
+
+     <div class="cards-container">
+        <div class="card" onclick="window.location.href='index.html';">
+            <div class="discount">
+                <i class="fas fa-percent"></i>
+                <span>%20 İndirim</span>
+            </div>
+            <img src="wwwroot/img/1.jpg" alt="">
+            <div class="info">
+                <h2>Big Belly Burger</h2>
+                <p>Burger</p>
+                <p><i class="fas fa-motorcycle"></i>Ücretsiz</p>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <span>4.5</span>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='index.html';">
+            <div class="discount">
+                <i class="fas fa-percent"></i>
+                <span>%20 İndirim</span>
+            </div>
+            <img src="wwwroot/img/1.jpg" alt="">
+            <div class="info">
+                <h2>Big Belly Burger</h2>
+                <p>Burger</p>
+                <p><i class="fas fa-motorcycle"></i>Ücretsiz</p>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <span>4.5</span>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='index.html';">
+            <div class="discount">
+                <i class="fas fa-percent"></i>
+                <span>%20 İndirim</span>
+            </div>
+            <img src="wwwroot/img/1.jpg" alt="">
+            <div class="info">
+                <h2>Big Belly Burger</h2>
+                <p>Burger</p>
+                <p><i class="fas fa-motorcycle"></i>Ücretsiz</p>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <span>4.5</span>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='index.html';">
+            <div class="discount">
+                <i class="fas fa-percent"></i>
+                <span>%20 İndirim</span>
+            </div>
+            <img src="wwwroot/img/1.jpg" alt="">
+            <div class="info">
+                <h2>Big Belly Burger</h2>
+                <p>Burger</p>
+                <p><i class="fas fa-motorcycle"></i>Ücretsiz</p>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <span>4.5</span>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='index.html';">
+            <div class="discount">
+                <i class="fas fa-percent"></i>
+                <span>%20 İndirim</span>
+            </div>
+            <img src="wwwroot/img/1.jpg" alt="">
+            <div class="info">
+                <h2>Big Belly Burger</h2>
+                <p>Burger</p>
+                <p><i class="fas fa-motorcycle"></i>Ücretsiz</p>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <span>4.5</span>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='index.html';">
+            <div class="discount">
+                <i class="fas fa-percent"></i>
+                <span>%20 İndirim</span>
+            </div>
+            <img src="wwwroot/img/1.jpg" alt="">
+            <div class="info">
+                <h2>Big Belly Burger</h2>
+                <p>Burger</p>
+                <p><i class="fas fa-motorcycle"></i>Ücretsiz</p>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <span>4.5</span>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='index.html';">
+            <div class="discount">
+                <i class="fas fa-percent"></i>
+                <span>%20 İndirim</span>
+            </div>
+            <img src="wwwroot/img/1.jpg" alt="">
+            <div class="info">
+                <h2>Big Belly Burger</h2>
+                <p>Burger</p>
+                <p><i class="fas fa-motorcycle"></i>Ücretsiz</p>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <span>4.5</span>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='index.html';">
+            <div class="discount">
+                <i class="fas fa-percent"></i>
+                <span>%20 İndirim</span>
+            </div>
+            <img src="wwwroot/img/1.jpg" alt="">
+            <div class="info">
+                <h2>Big Belly Burger</h2>
+                <p>Burger</p>
+                <p><i class="fas fa-motorcycle"></i>Ücretsiz</p>
+            </div>
+            <div class="rating">
+                <i class="fas fa-star"></i>
+                <span>4.5</span>
+            </div>
+        </div>
+     </div>
+     <footer style="margin-top: 40px; background-color: #fa0050; color: #fff; padding: 20px 0;">
+        <div class="footer-bottom" style="margin-top: 40px;">
+            <div class="container">
+                <p>&copy; 2024 YemekSepeti Klon</p>
+            </div>
+        </div>
+     </footer>
+</body>
+</html>

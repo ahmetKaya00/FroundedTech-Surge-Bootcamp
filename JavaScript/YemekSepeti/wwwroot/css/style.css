@@ -142,3 +142,32 @@ body{
     padding: 2px;
     color: #333;
 }
+
+.download-feature{
+    background: #fa0050;
+    max-width: 80%;
+    border-radius: 15px;
+    padding: 10px 20px;
+    position: relative;
+    color: #fff;
+    margin: auto;
+}
+
+.download-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.download-content{
+    text-align: left;
+    max-width: 600px;
+}
+.download-phone-image{
+    width: 70%;
+    max-width: 300px;
+    margin-bottom: -60px;
+    transform: rotate(5deg);
+}
