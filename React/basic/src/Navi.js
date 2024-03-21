@@ -6,12 +6,9 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
+    NavLink
 } from "reactstrap";
+import CarSummary from "./CarSummary";
 export default class Navi extends React.Component {
     constructor(props) {
         super(props);
@@ -39,14 +36,7 @@ export default class Navi extends React.Component {
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
                             </NavItem>
-                            <UncontrolledDropdown nav inNavbar>
-                                <DropdownToggle nav caret>options: {this.props.cart.length}</DropdownToggle>
-                                <DropdownMenu right>
-                                    <DropdownItem>option1</DropdownItem>
-                                    <DropdownItem>option2</DropdownItem>
-                                    <DropdownItem>Reset</DropdownItem>
-                                </DropdownMenu>
-                            </UncontrolledDropdown>
+                            <CarSummary removeFromCart={this.props.removeFromCart} cart={this.props.cart}/>
                         </Nav>
                     </Collapse>
                 </Navbar>
